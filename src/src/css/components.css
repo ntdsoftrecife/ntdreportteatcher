@@ -1,0 +1,211 @@
+.color-dark{ color:var(--color-dark); }
+.color-dark-80{ color:var(--color-dark-80); }
+.color-red{ color:var(--color-red); }
+.color-dark-grey{ color:var(--color-dark-grey); }
+.color-grey{ color:var(--color-grey); }
+.color-smooth{ color:var(--color-smooth); }
+
+
+.bg-color-dark{
+    background-color:var(--color-dark);
+    color:var(--color-white);
+}
+.bg-color-dark-80{
+    background-color:var(--color-dark-80);
+    color:var(--color-white);
+}
+.bg-color-red{
+    background-color:var(--color-red);
+    color:var(--color-white);
+}
+.bg-color-dark-grey{
+    background-color:var(--color-dark-grey);
+    color:var(--color-white);
+}
+.bg-color-grey{
+    background-color:var(--color-grey);
+    color:var(--color-very-dark-grey);
+}
+.bg-color-smooth{
+    background-color:var(--color-smooth);
+    color:var(--color-dark-grey);
+}
+.bg-color-white{
+    background-color:var(--color-white);
+    color:var(--color-dark-grey);
+}
+.bg-color-theme-1{
+    background-color:var(--color-theme-1);
+    color:var(--color-theme-3);
+}
+.bg-color-theme-2{
+    background-color:var(--color-theme-2);
+    color:var(--color-white);
+}
+.bg-color-theme-3{
+    background-color:var(--color-theme-3);
+    color:var(--color-theme-1);
+}
+
+
+.left{ text-align: left; }
+.center{ text-align: center; }
+.right{ text-align: right; }
+  
+  
+.f8{ font-size:8px; }
+.f10{ font-size:10px; }
+.f12{ font-size:12px; }
+.f16{ font-size:16px; }
+.f18{ font-size:18px; }
+  
+.flex-row{
+    display:flex;
+    flex-direction: row;
+}
+  
+.flex-column{
+    display:flex;
+    flex-direction: column;
+}
+  
+.flex-center{
+    align-items: center;
+    justify-content: center;
+}
+
+
+.flex-row.center,
+.flex-column.center{
+    align-items: center;
+    justify-content: center;
+}
+
+  
+.flex-row.left{ justify-content: flex-start !important; }
+.flex-row.top{ align-items: flex-start !important; }
+.flex-row.right{ justify-content: flex-end !important; }
+.flex-row.bottom{ align-items: flex-end !important; }
+  
+.flex-column.left{ align-items: flex-start !important; }
+.flex-column.top{ justify-content: flex-start !important; }
+.flex-column.right{ align-items: flex-end !important; }
+.flex-column.bottom{ justify-content: flex-end !important; }
+
+
+.flex-row.wrap,
+.flex-column.wrap{
+    flex-flow: wrap;
+}
+
+
+.flex1{ flex:1; }
+.flex2{ flex:2; }
+.flex3{ flex:3; }
+
+.flex-1{ flex:1; }
+.flex-2{ flex:2; }
+.flex-3{ flex:3; }
+
+.flex-inherit{ flex:inherit; }
+  
+.gap5{ gap:5px; }
+.gap10{ gap:10px; }
+.gap20{ gap:20px; }
+.gap30{ gap:30px; }
+  
+.photo3x4A{
+    width: 45px;
+    height: 60px;
+}
+  
+.border-radius-4{
+    border-radius: 4px;
+}
+  
+.shadow-3{
+    box-shadow: 3px 3px 3px var(--color-dark-opacity-4);
+}
+  
+.photo-circ-40{
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+    object-fit: cover;
+}
+  
+.bgcolor-1{
+    background-color:var(--color-dark);
+    color:var(--color-dark-40);
+}
+.bgcolor-2{
+    background-color:var(--color-smooth);
+    color:var(--color-very-dark-grey);
+}
+
+
+.color-1{ color:var(--color-dark); }
+.color-2{ color:var(--color-dark-grey); }
+
+  
+.b{ font-weight: bold; }
+  
+  
+.p5{ padding:5px; }
+.p10{ padding:10px; }
+.p15{ padding:15px; }
+.p20{ padding:20px; }
+.p25{ padding:25px; }
+.p30{ padding:30px; }
+
+
+.m5{ margin:5px; }
+.m10{ margin:10px; }
+.m15{ margin:15px; }
+.m20{ margin:20px; }
+.m25{ margin:25px; }
+.m30{ margin:30px; }
+
+
+.w100-porcent{ width:100%; }
+
+.h100-porcent{ height:100%; }
+
+
+.min-w-50{ min-width: 50px; }
+.min-w-100{ min-width: 100px; }
+.min-w-150{ min-width: 150px; }
+.min-w-200{ min-width: 200px; }
+.min-w-250{ min-width: 250px; }
+.min-w-300{ min-width: 300px; }
+  
+  
+.pointer{ cursor:pointer; }
+  
+  
+.button-hover:hover{
+    opacity:0.8;
+}
+
+
+.border-radius-4{
+    border-radius: 4px;
+}
+
+.border-smooth{
+    border: solid 1px var(--color-grey);
+}
+
+
+.overflow{
+    overflow: auto;
+}
+
+
+.grid-data{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    text-align: left;
+}

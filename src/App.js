@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import ClassesScholl from './src/link/class';
+
+import './src/css/color.css'
+import './src/css/basic.css'
+import './src/css/components.css'
+import Student from './src/link/student';
+import PresenceByClass from './src/link/presencebyclass';
+import cssPagedMedia from './src/components/stylecompile';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <BrowserRouter>
+      <ClassesScholl />
+      <Student />
+      <PresenceByClass />
+    </BrowserRouter>
 }
 
 export default App;

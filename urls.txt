@@ -1,0 +1,6 @@
+student list
+/report/studentlist
+
+
+classes list
+/report/classlist
