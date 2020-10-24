@@ -23,6 +23,8 @@ const SelectClass: React.SFC<SelectClassProps> = memo( ({defaultNull=true, value
     if(!data)
         return <span className='h100-porcent flex-row center b p10'>{erro} - {errocode}</span>
 
+    console.log('data :>> ', data);
+
     return <select value={value} onChange={onChange} autoFocus={autoFocus}>
         {
             !defaultNull ? null :

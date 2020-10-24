@@ -1,14 +1,10 @@
-//@ts-nocheck
-
-
 import { useState, useEffect } from "react"
+import axios from 'axios'
 
-const axios = require('axios')
 
+const TEST:number = 0
 
-const TEST = 0
-
-const HOST = TEST === 1 ? 'http://localhost:8888/' :
+export const HOST = TEST === 1 ? 'http://localhost:8888/' :
     'https://ntdsoft.net.br:8114/'
 
 
@@ -27,78 +23,82 @@ export type TinsertUpdateDelete = {
 
 
 export type Terro = {
-    erro:string,
-    errocode:string
+    erro?:any,
+    errocode?:any
 }
 
 
 export type Tprops = {
-    headers:{
-        token:string
+    headers?:{
+        token?:string
     }
 }
 
-const getToken = () => {
-    return window.localStorage.getItem('tokenProfessor') | ''
+export const getToken = () => {
+    return window.localStorage.getItem('tokenProfessor') || ''
 }
 
 
-async function get<RETURN>(url:string, props?:Tprops={}):Promise<RETURN>{
+export async function get<RETURN=any>(url:string, props:Tprops={}):Promise<RETURN>{
     try{
         const result = await api.get(url, props)
         return result.data;
     }catch(erro){
-        return {erro, errocode:erro.code}
+        const result:any = {erro:erro, errocode:erro.code}
+        return result;
     }
 }
 
 
-async function post<RETURN, DATA>(url:string, data?:DATA, props?:Tprops={}):Promise<RETURN>{
+export async function post<RETURN=any, DATA=any>(url:string, data?:DATA, props:Tprops={}):Promise<RETURN>{
     try{
         const result = await api.post(url, data, props)
         return result.data;
     }catch(erro){
-        return {erro, errocode:erro.code}
+        const result:any = {erro, errocode:erro.code}
+        return result;
     }
 }
 
 
-async function put<RETURN, DATA>(url:string, data?:DATA, props?:Tprops={}):Promise<RETURN>{
+export async function put<RETURN=any, DATA=any>(url:string, data?:DATA, props:Tprops={}):Promise<RETURN>{
     try{
         const result = await api.put(url, data, props)
         return result.data;
     }catch(erro){
-        return {erro, errocode:erro.code}
+        const result:any = {erro, errocode:erro.code}
+        return result;
     }
 }
 
 
-async function deleteFunction<RETURN>(url:string, props?:Tprops={}):Promise<RETURN>{
+export async function deleteFunction<RETURN=any>(url:string, props:Tprops={}):Promise<RETURN>{
     try{
         const result = await api.delete(url, props)
         return result.data;
     }catch(erro){
-        return {erro, errocode:erro.code}
+        const result:any = {erro, errocode:erro.code}
+        return result;
     }
 }
 
 
-const comunication = { get, post, put, delete:deleteFunction }
+export const comunication = { get, post, put, delete:deleteFunction }
 
 
-function useComunication<RETURN>(url:string):{
-    loaded:boolean, data:RETURN, erro:string, errocode:string, refresh:()=>any
+export function useComunication<RETURN=any>(url:string):{
+    loaded:boolean, data:RETURN | undefined, erro:string, errocode:string, refresh:()=>any, randomRefreshNumber:number
 }{
 
     const [loaded, setLoaded] = useState<boolean>(false);
-    const [data, setData] = useState<RETURN | null | Terro>(null);
+    const [data, setData] = useState<RETURN>();
     const [erro, setErro] = useState<string>('');
     const [errocode, setErrocode] = useState<string>('');
     const [refreshData, setRefreshData] = useState<number>(0);
 
     useEffect(() => {
         comunication.get<RETURN>(url)
-                .then( result => {
+                .then( (result:any) => {
                     setData(result)
                     setLoaded(true)
                     if(result.erro) setErro(result.erro)
@@ -111,14 +111,11 @@ function useComunication<RETURN>(url:string):{
     },[])
 
     return {
-        loaded, data, erro, errocode,
-        refresh:():any => setRefreshData( Math.round( Math.random() * 100000000 ) ),
+        loaded, data:data, erro, errocode,
+        refresh:() => setRefreshData( Math.round( Math.random() * 100000000 ) ),
         randomRefreshNumber:refreshData
     };
 }
 
 
 export default comunication
-export {
-    useComunication, HOST
-}

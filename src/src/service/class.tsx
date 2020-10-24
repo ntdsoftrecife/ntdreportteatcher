@@ -1,5 +1,5 @@
 import React from 'react';
-import comunication, { useComunication } from './cominication';
+import comunication, { Terro, useComunication } from './cominication';
 
 
 export type TclassListData = {
@@ -48,12 +48,12 @@ function useClassStudentList(classCode:number){
 
 
 
-function classList():Promise<Array<TclassListData>>{
+function classList():Promise<TclassListData[] | Terro>{
     return comunication.get<Array<TclassListData>>('/class/')
 }
 
 
-function classData(classCode:number):Promise<TclassListData>{
+function classData(classCode:number):Promise<TclassListData | Terro>{
     return comunication.get<TclassListData>('/class/' + classCode)
 }
 

@@ -30,6 +30,11 @@ const StudentList: React.SFC<StudentListProps> = () => {
             {erro} - {errocode}
         </div>
 
+    if(!data)
+        return <div className='flex-row center flex-1'>
+            NENHUM REGISTRO ENCONTRADO
+        </div>
+
     if(!(data || []).length)
         return <div className='flex-row center flex-1'>
             NENHUM REGISTRO ENCONTRADO

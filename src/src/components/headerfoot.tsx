@@ -1,6 +1,7 @@
 import React from 'react';
 import useScholl, { Tscholl } from '../service/school';
 import styled from 'styled-components'
+import { Terro } from '../service/cominication';
 
 
 
@@ -25,7 +26,7 @@ const Foot = styled.div`
 export interface HeaderFootProps {
     children:any,
     foto?:string,
-    onLoad?:(scholl?:Tscholl)=>any
+    onLoad?:(scholl:Tscholl)=>any
 }
  
 const HeaderFoot: React.SFC<HeaderFootProps> = ({children, foto='', onLoad}) => {

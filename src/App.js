@@ -7,13 +7,15 @@ import './src/css/basic.css'
 import './src/css/components.css'
 import Student from './src/link/student';
 import PresenceByClass from './src/link/presencebyclass';
-import cssPagedMedia from './src/components/stylecompile';
+import PrintExercise from './src/link/exercise';
+// import cssPagedMedia from './src/components/stylecompile';
 
 function App() {
   return <BrowserRouter>
       <ClassesScholl />
       <Student />
       <PresenceByClass />
+      <PrintExercise />
     </BrowserRouter>
 }
 

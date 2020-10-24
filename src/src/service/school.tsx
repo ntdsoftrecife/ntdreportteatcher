@@ -1,4 +1,3 @@
-import React from 'react';
 import { useComunication, Terro } from './cominication';
 
 
@@ -139,7 +138,9 @@ export type Tscholl = {
     on_jurosnao: 0 | 1,
     on_multanao: 0 | 1,
     on_descontonao: 0 | 1,
-    site: string
+    site: string,
+    erro?:string,
+    errocode?:string
 }
 
 
